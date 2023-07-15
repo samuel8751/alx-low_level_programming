@@ -1,10 +1,10 @@
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * main - negative and positive numbers in rand()
  *
- * Return: always(0)
- *
+ * Return: always 0
  */
 int main(void)
 {
@@ -24,6 +24,5 @@ else
 {
 printf("%d is negative\n", n);
 }
-
 return (0);
 }
