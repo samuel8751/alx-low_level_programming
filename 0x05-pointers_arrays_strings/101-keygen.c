@@ -2,49 +2,36 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define PASSWORD_LENGTH 63
+
 /**
- * main - generates a random valid password and adjusts its sum of ASCII values
- *        to 2772.
- * Return: 0 for success.
+ * generate_password - Generates a random password.
+ * Return: A pointer to the generated password.
  */
-int main(void)
+char *generate_password(void)
 {
-    char password[84];
-    int index = 0, sum = 0, diff_half1, diff_half2;
+    static char password[PASSWORD_LENGTH + 1];
+    const char charset[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.-#?!";
+    int i;
 
     srand(time(0));
 
-    while (sum < 2772)
+    for (i = 0; i < PASSWORD_LENGTH; i++)
     {
-        password[index] = 33 + rand() % 94;
-        sum += password[index++];
+        int index = rand() % (sizeof(charset) - 1);
+        password[i] = charset[index];
     }
 
-    password[index] = '\0';
+    password[PASSWORD_LENGTH] = '\0';
 
-    if (sum != 2772)
-    {
-        diff_half1 = (sum - 2772) / 2;
-        diff_half2 = (sum - 2772) / 2;
+    return password;
+}
 
-        if ((sum - 2772) % 2 != 0)
-            diff_half1++;
-
-        for (index = 0; password[index]; index++)
-        {
-            if (password[index] >= (33 + diff_half1))
-                password[index] -= diff_half1; 
-        }
-
-        for (index = 0; password[index]; index++)
-        {
-            if (password[index] >= (33 + diff_half2))
-                password[index] -= diff_half2;
-        }
-    }
-
+int main(void)
+{
+    char *password = generate_password();
     printf("%s\n", password);
 
-    return (0);
+    return 0;
 }
 
