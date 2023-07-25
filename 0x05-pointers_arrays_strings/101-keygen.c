@@ -27,13 +27,13 @@ int main(void)
         diff_half1 = (sum - 2772) / 2;
         diff_half2 = (sum - 2772) / 2;
 
-        if ((sum - 2772) % 2 != 0) // Corrected: Remove quotes around 0 to check for an odd number.
+        if ((sum - 2772) % 2 != 0)
             diff_half1++;
 
         for (index = 0; password[index]; index++)
         {
             if (password[index] >= (33 + diff_half1))
-                password[index] -= diff_half1; // Corrected: Use -= instead of >=.
+                password[index] -= diff_half1; 
         }
 
         for (index = 0; password[index]; index++)
@@ -43,7 +43,7 @@ int main(void)
         }
     }
 
-    printf("%s\n", password); // Moved this line inside the main function.
+    printf("%s\n", password);
 
     return (0);
 }
