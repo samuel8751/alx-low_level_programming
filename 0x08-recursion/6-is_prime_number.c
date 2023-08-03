@@ -6,7 +6,7 @@
  * @i: iterator
  * Return: 1 if prime, 0 otherwise
  */
-static int actual_prime(int n, int i);
+int actual_prime(int n, int i);
 
 /**
  * is_prime_number - checks if a number is prime
@@ -27,7 +27,7 @@ return (actual_prime(n, 2));
  * @i: iterator
  * Return: 1 if prime, 0 otherwise
  */
-static int actual_prime(int n, int i)
+int actual_prime(int n, int i)
 {
 if (n % i == 0)
 return (0);
