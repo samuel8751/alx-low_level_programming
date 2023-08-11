@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 #include <stdio.h>
 /**
  * _realloc - reallocates memory block uding malloc
@@ -17,7 +18,7 @@ if (ptr == NULL)
 p = malloc(new_size);
 return (p);
 }
-else if (mew_size == 0)
+else if (new_size == 0)
 {
 free(ptr);
 return (NULL);
@@ -30,7 +31,7 @@ return (NULL);
 if (new_size > old_size)
 max = old_size;
 for (i = 0; i < max; i++)
-p[i] = oldp[i]
+p[i] = oldp[i];
 free(ptr);
 return (p);
 }
