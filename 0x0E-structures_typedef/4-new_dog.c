@@ -10,8 +10,6 @@
  * @owner: Owner of the dog
  *
  * Return: Pointer to the new dog, or NULL if memory allocation fails
- *
- * Description: This function creates a new dog with the given attributes.
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
