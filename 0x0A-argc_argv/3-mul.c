@@ -1,19 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * main - mul 2 numbers
- * @argc: number of commanine args
- * @argv: arrays that contains commandline args..
- * Return 0
+ * main - Entry point
+ * @argc: The number of command line arguments
+ * @argv: An array containing the command line arguments
+ *
+ * Return: 0 on success, 1 on error
  */
 int main(int argc, char *argv[])
 {
-if (argc != 3)
-{
-printf("Error\n")
-return (1);
+	int num1, num2, result;
+
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
+	result = num1 * num2;
+
+	printf("%d\n", result);
+
+	return (0);
 }
-printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
-return (0);
-}
-~
+
